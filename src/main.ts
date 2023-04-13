@@ -42,7 +42,7 @@ async function run(): Promise<void> {
 
     const summary = JSON.parse(readFileSync(file, "utf8"));
 
-    await fetch(uploadUrl, {
+    const response = await fetch(uploadUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -59,7 +59,11 @@ async function run(): Promise<void> {
       }),
     });
 
-    core.info("Upload complete");
+    if (!response.ok) {
+      core.error(`Error uploading to Turbocache: ${response.statusText}`);
+    } else {
+      core.info("Upload complete");
+    }
   } catch (error) {
     if (error instanceof Error) {
       core.error("Error uploading to Turbocache");
