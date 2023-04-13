@@ -1,5 +1,8 @@
 name: Turbocache Action
 description: "A GitHub Action to integrate Turbocache into your workflow"
+branding:
+  icon: "fast-forward"
+  color: "red"
 author: Turbocache
 inputs: {}
 runs:
