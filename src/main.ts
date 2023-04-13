@@ -1,6 +1,7 @@
 import * as core from "@actions/core";
 import { readFileSync } from "fs";
 import { findTurboSummaryFile } from "./findFile";
+import "cross-fetch/polyfill";
 
 async function run(): Promise<void> {
   try {
@@ -34,7 +35,7 @@ async function run(): Promise<void> {
       return;
     }
 
-    core.debug(`Found Turbo summary file: ${file}`);
+    core.info(`Found Turbo summary file: ${file}`);
 
     const uploadUrl = `https://cache.turbocache.build/api/v1/runs?teamId=${team}`;
     core.debug(`Uploading to ${uploadUrl}`);
@@ -58,7 +59,7 @@ async function run(): Promise<void> {
       }),
     });
 
-    core.debug("Upload complete");
+    core.info("Upload complete");
   } catch (error) {
     if (error instanceof Error) {
       core.error("Error uploading to Turbocache");

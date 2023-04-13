@@ -7,5 +7,5 @@ export function findTurboSummaryFile(): string | undefined {
   if (!file) {
     return;
   }
-  return file;
+  return `${LOCATION}/${file}`;
 }
