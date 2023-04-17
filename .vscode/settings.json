@@ -3,6 +3,9 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  "files.exclude": {
+    "**/dist": false
+  },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }

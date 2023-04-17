@@ -8,7 +8,9 @@
     "build": "yarn tsc",
     "format": "yarn prettier --write .",
     "lint": "yarn eslint src/**/*.ts",
-    "package": "ncc build --source-map --license licenses.txt",
+    "package": "yarn package:main && yarn package:post",
+    "package:main": "ncc build src/main.ts --license licenses.txt -o dist/main",
+    "package:post": "ncc build src/post.ts --license licenses.txt -o dist/post",
     "test": "yarn jest",
     "prepare": "husky install"
   },
