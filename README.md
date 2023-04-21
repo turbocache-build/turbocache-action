@@ -2,6 +2,9 @@
   <a href="https://github.com/turbocache-build/turbocache-action/actions"><img alt="turbocache-action status" src="https://github.com/turbocache-build/turbocache-action/workflows/test/badge.svg"></a>
 </p>
 
+
+**Note:** Requires a minimum version of `turbo@1.9.0`
+
 # Turbocache Action :rocket:
 
 ## Setup
@@ -27,3 +30,4 @@
       TURBO_TEAM: 'team_ci'
       TURBO_RUN_SUMMARY: true
   ```
+
