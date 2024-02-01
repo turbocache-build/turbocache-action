@@ -3,13 +3,13 @@
 Install the dependencies
 
 ```bash
-$ yarn install
+yarn install
 ```
 
 Build the typescript and package it for distribution
 
 ```bash
-$ yarn dist
+yarn package
 ```
 
 Run the tests :heavy_check_mark:
@@ -26,10 +26,10 @@ Actions are run from GitHub repos so we will checkin the packed dist folder.
 Then run [ncc](https://github.com/zeit/ncc) and push the results:
 
 ```bash
-$ yarn dist
-$ git add dist
-$ git commit -a -m "prod dependencies"
-$ git push origin releases/v1
+yarn package
+git add dist
+git commit -a -m "prod dependencies"
+git push origin releases/v1
 ```
 
 Note: We recommend using the `--license` option for ncc, which will create a license file for all of the production node modules used in your project.
