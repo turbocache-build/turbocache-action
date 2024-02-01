@@ -9787,17 +9787,14 @@ module.exports.implForWrapper = function (wrapper) {
 /***/ }),
 
 /***/ 911:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
 
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.findTurboSummaryFiles = void 0;
 const fs_1 = __nccwpck_require__(7147);
-const glob_1 = __importDefault(__nccwpck_require__(8211));
+const glob_1 = __nccwpck_require__(8211);
 function findTurboSummaryFiles() {
     const LOCATION = findLocation();
     const files = (0, fs_1.readdirSync)(LOCATION).filter((file) => file.endsWith(".json"));
@@ -9806,7 +9803,7 @@ function findTurboSummaryFiles() {
 exports.findTurboSummaryFiles = findTurboSummaryFiles;
 // Find a folder called .turbo/runs
 function findLocation() {
-    const folders = glob_1.default.sync(".turbo/runs");
+    const folders = (0, glob_1.sync)(".turbo/runs");
     if (folders.length === 0) {
         throw new Error("No .turbo/runs folder found");
     }

@@ -1,5 +1,5 @@
 import { readdirSync } from "fs";
-import glob from "glob";
+import { sync } from "glob";
 
 export function findTurboSummaryFiles(): string[] {
   const LOCATION = findLocation();
@@ -9,7 +9,7 @@ export function findTurboSummaryFiles(): string[] {
 
 // Find a folder called .turbo/runs
 function findLocation(): string {
-  const folders = glob.sync(".turbo/runs");
+  const folders = sync(".turbo/runs");
   if (folders.length === 0) {
     throw new Error("No .turbo/runs folder found");
   }
