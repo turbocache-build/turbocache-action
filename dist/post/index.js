@@ -9803,7 +9803,7 @@ function findTurboSummaryFiles() {
 exports.findTurboSummaryFiles = findTurboSummaryFiles;
 // Find a folder called .turbo/runs
 function findLocation() {
-    const folders = (0, glob_1.sync)(".turbo/runs");
+    const folders = (0, glob_1.sync)([".turbo/runs", "**/.turbo/runs"], { maxDepth: 3 });
     if (folders.length === 0) {
         throw new Error("No .turbo/runs folder found");
     }

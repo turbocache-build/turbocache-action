@@ -9,7 +9,7 @@ export function findTurboSummaryFiles(): string[] {
 
 // Find a folder called .turbo/runs
 function findLocation(): string {
-  const folders = sync(".turbo/runs");
+  const folders = sync([".turbo/runs", "**/.turbo/runs"], { maxDepth: 3 });
   if (folders.length === 0) {
     throw new Error("No .turbo/runs folder found");
   }
